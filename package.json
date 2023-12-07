@@ -1,0 +1,76 @@
+{
+  "name": "nameless-ui",
+  "version": "0.0.0",
+  "type": "module",
+  "description": "Vue3 Components",
+  "keywords": [
+    "Vue3",
+    "Components"
+  ],
+  "license": "MIT",
+  "main": "./lib/dist/nameless-ui.js",
+  "exports": {
+    ".": "./lib/dist/nameless-ui.js",
+    "./style": "./lib/dist/style.css"
+  },
+  "types": "./lib/dist/nameless-ui.d.ts",
+  "scripts": {
+    "dev": "pnpm --filter @nameless-ui/components dev",
+    "build": "pnpm --filter @nameless-ui/components build",
+    "preview": "pnpm --filter @nameless-ui/components preview",
+    "doc": "pnpm --filter @nameless-ui/doc",
+    "lib": "pnpm --filter @nameless-ui/components"
+  },
+  "prettier": {
+    "plugins": [
+      "prettier-plugin-tailwindcss"
+    ],
+    "tailwindConfig": "./lib/tailwind.config.ts",
+    "tailwindAttributes": [
+      "class",
+      "enterFromClass",
+      "enterActiveClass",
+      "enterToClass",
+      "leaveFromClass",
+      "leaveActiveClass",
+      "leaveToClass",
+      "enter-from-class",
+      "enter-active-class",
+      "enter-to-class",
+      "leave-from-class",
+      "leave-active-class",
+      "leave-to-class"
+    ],
+    "bracketSameLine": false,
+    "jsxBracketSameLine": true,
+    "jsxSingleQuote": true,
+    "printWidth": 100,
+    "semi": false,
+    "singleAttributePerLine": false,
+    "singleQuote": true,
+    "tabWidth": 2,
+    "trailingComma": "none",
+    "arrowParens": "avoid"
+  },
+  "dependencies": {
+    "nameless-ui": "workspace:^",
+    "vue": "^3.3.13",
+    "vue-router": "^4.2.5"
+  },
+  "devDependencies": {
+    "@iconify-json/fluent": "^1.1.45",
+    "@iconify/tailwind": "^0.1.4",
+    "@types/node": "^20.10.5",
+    "@vitejs/plugin-vue": "^5.0.0",
+    "@vitejs/plugin-vue-jsx": "^3.1.0",
+    "mm3": "^0.2.0",
+    "postcss": "^8.4.32",
+    "prettier": "^3.1.1",
+    "prettier-plugin-tailwindcss": "^0.5.9",
+    "tailwindcss": "^3.4.0",
+    "typescript": "^5.3.3",
+    "vite": "^5.0.10",
+    "vite-plugin-dts": "^3.7.0",
+    "vue-tsc": "^1.8.27"
+  }
+}

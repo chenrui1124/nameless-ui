@@ -1,0 +1,10 @@
+{
+  "name": "@nameless-ui/components",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vue-tsc && vite build",
+    "preview": "vite preview"
+  }
+}
