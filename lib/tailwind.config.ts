@@ -74,6 +74,12 @@ export default {
             outline: `2px solid rgba(var(--nano-color-on-err), ${theme('opacity.48')})`,
             outlineOffset: '4px'
           }
+        },
+        '.n-disabled': {
+          '&:disabled': {
+            opacity: <string>theme('opacity.48'),
+            pointerEvents: 'none'
+          }
         }
       } satisfies CSSInJS)
     }),
