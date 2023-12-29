@@ -1,7 +1,6 @@
 <script setup lang="ts">
 import type { ButtonProps } from '.'
 
-import { useAttrs } from 'vue'
 import { BsIcon } from '@bases'
 
 defineOptions({ name: 'Button' })
@@ -9,8 +8,6 @@ defineOptions({ name: 'Button' })
 const { variant = 'outlined', loading, disabled } = defineProps<ButtonProps>()
 
 const emit = defineEmits<{ click: [event: Event] }>()
-
-const attrs = useAttrs()
 
 function onClick(event: Event) {
   if (!loading && !disabled) emit('click', event)

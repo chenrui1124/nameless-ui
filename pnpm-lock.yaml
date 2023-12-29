@@ -18,9 +18,12 @@ importers:
         specifier: ^4.2.5
         version: 4.2.5(vue@3.4.0)
     devDependencies:
-      '@iconify-json/fluent':
-        specifier: ^1.1.45
-        version: 1.1.45
+      '@iconify-json/solar':
+        specifier: ^1.1.9
+        version: 1.1.9
+      '@iconify-json/svg-spinners':
+        specifier: ^1.1.2
+        version: 1.1.2
       '@iconify/tailwind':
         specifier: ^0.1.4
         version: 0.1.4
@@ -28,8 +31,8 @@ importers:
         specifier: ^20.10.5
         version: 20.10.5
       '@vitejs/plugin-vue':
-        specifier: ^5.0.0
-        version: 5.0.0(vite@5.0.10)(vue@3.4.0)
+        specifier: ^4.6.0
+        version: 4.6.0(vite@5.0.10)(vue@3.4.0)
       '@vitejs/plugin-vue-jsx':
         specifier: ^3.1.0
         version: 3.1.0(vite@5.0.10)(vue@3.4.0)
@@ -570,8 +573,14 @@ packages:
     dev: true
     optional: true
 
-  /@iconify-json/fluent@1.1.45:
-    resolution: {integrity: sha512-0WylssZXAHxaKDGVVINeQxJz9+smsFKYDOCb7l4tLe3jy1htuAGVDbzZFon2BvOEZlXiYYYqmA4DqExqOcKWxg==}
+  /@iconify-json/solar@1.1.9:
+    resolution: {integrity: sha512-BcWzZqA02BiQduYizqU/J4v4RNs0MkjZUGpMbejpozH8YQSt3+S/LfV6zfVRonx/2DhXTVSqiLa1abDRAZtojQ==}
+    dependencies:
+      '@iconify/types': 2.0.0
+    dev: true
+
+  /@iconify-json/svg-spinners@1.1.2:
+    resolution: {integrity: sha512-Aab6SqkORaTJ1W+ooufn6C8BsBitrn3uk8iRQLPA6pjhyvQAhkKCGMctyXIL5ZjrycnoFVsZ4mx7KnwEMra8qg==}
     dependencies:
       '@iconify/types': 2.0.0
     dev: true
@@ -885,11 +894,11 @@ packages:
       - supports-color
     dev: true
 
-  /@vitejs/plugin-vue@5.0.0(vite@5.0.10)(vue@3.4.0):
-    resolution: {integrity: sha512-7x5e8X4J1Wi4NxudGjJBd2OFerAi/0nzF80ojCzvfj347WVr0YSn82C8BSsgwSHzlk9Kw5xnZfj0/7RLnNwP5w==}
-    engines: {node: ^18.0.0 || >=20.0.0}
+  /@vitejs/plugin-vue@4.6.0(vite@5.0.10)(vue@3.4.0):
+    resolution: {integrity: sha512-XHuyFdAikWRmHuAd89FOyUGIjrBU5KlxJtyi2hVeR9ySGFxQwE0bl5xAQju/ArMq5azdBivY4d+D2yPKwoYWUg==}
+    engines: {node: ^14.18.0 || >=16.0.0}
     peerDependencies:
-      vite: ^5.0.0
+      vite: ^4.0.0 || ^5.0.0
       vue: ^3.2.25
     dependencies:
       vite: 5.0.10(@types/node@20.10.5)
