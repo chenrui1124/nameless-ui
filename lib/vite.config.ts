@@ -30,7 +30,7 @@ export default defineConfig({
   },
 
   resolve: {
-    alias: ['components', 'composable', 'directives', 'utils'].reduce(
+    alias: ['bases', 'components', 'composable', 'directives', 'utils'].reduce(
       (result, value) => {
         result[`@${value}`] = fileURLToPath(new URL(`./src/${value}/index.ts`, import.meta.url))
         return result

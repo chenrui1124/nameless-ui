@@ -10,6 +10,7 @@
       "@doc/*": ["./doc/*"],
       "@lib": ["./lib/src/main.ts"],
       "@css": ["./lib/src/main.css"],
+      "@bases": ["./lib/src/bases/index.ts"],
       "@components": ["./lib/src/components/index.ts"],
       "@composable": ["./lib/src/composable/index.ts"],
       "@directives": ["./lib/src/directives/index.ts"],

@@ -1,1 +1,1 @@
-export {}
+export { withInstall } from './with-install'
