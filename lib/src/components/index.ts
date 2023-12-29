@@ -1,3 +1,4 @@
+export { NAutoGrid, type AutoGridProps } from './auto-grid'
 export { NButton, type ButtonProps } from './button'
 export { NIconButton, type IconButtonProps } from './icon-button'
 export { NIterate, type IterateProps } from './iterate'
