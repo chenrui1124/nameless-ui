@@ -1,0 +1,45 @@
+<script setup lang="ts">
+import type { IconButtonProps } from '.'
+
+import { BsIcon } from '@bases'
+import { useClass } from '@composable'
+
+defineOptions({ name: 'IconButton' })
+
+const { disabled } = defineProps<IconButtonProps>()
+
+const emit = defineEmits<{ click: [event?: Event] }>()
+
+const [cls, activate] = useClass()
+
+function onClick(event: Event) {
+  activate(150)
+  emit('click', event)
+}
+</script>
+
+<template>
+  <button
+    type="button"
+    :="$attrs"
+    :disabled="disabled"
+    @click="onClick"
+    :class="[
+      'group/n-icon-button',
+      'inline-flex h-10 w-10.5 cursor-pointer items-center justify-center rounded-md border-none bg-opacity-0 transition-colors duration-300',
+      'hover:bg-opacity-8 focus:bg-opacity-12',
+      'disabled:cursor-not-allowed disabled:bg-transparent disabled:text-dis disabled:opacity-48',
+      danger ? 'bg-on-err text-on-err n-outline-danger' : 'bg-acc text-acc n-outline'
+    ]"
+  >
+    <BsIcon
+      :i="icon"
+      size="lg"
+      :class="[
+        cls`group-enabled:scale-75`,
+        'transition duration-300 ease-fast',
+        disabled || 'group-active/n-icon-button:scale-75'
+      ]"
+    />
+  </button>
+</template>
