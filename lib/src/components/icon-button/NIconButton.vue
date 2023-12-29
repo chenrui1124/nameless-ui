@@ -26,9 +26,9 @@ function onClick(event: Event) {
     @click="onClick"
     :class="[
       'group/n-icon-button',
-      'inline-flex h-10 w-10.5 cursor-pointer items-center justify-center rounded-md border-none bg-opacity-0 transition-colors duration-300',
+      'inline-flex h-10 w-10.5 cursor-pointer items-center justify-center rounded-md border-none bg-opacity-0 transition-colors duration-300 n-disabled',
       'hover:bg-opacity-8 focus:bg-opacity-12',
-      'disabled:cursor-not-allowed disabled:bg-transparent disabled:text-dis disabled:opacity-48',
+      'disabled:text-dis',
       danger ? 'bg-on-err text-on-err n-outline-danger' : 'bg-acc text-acc n-outline'
     ]"
   >
@@ -36,9 +36,8 @@ function onClick(event: Event) {
       :i="icon"
       size="lg"
       :class="[
-        cls`group-enabled:scale-75`,
-        'transition duration-300 ease-fast',
-        disabled || 'group-active/n-icon-button:scale-75'
+        cls`scale-75`,
+        'transition duration-300 ease-fast group-active/n-icon-button:scale-75'
       ]"
     />
   </button>

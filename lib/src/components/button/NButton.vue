@@ -24,9 +24,9 @@ defineSlots<{ default(props: void): string }>()
     :tabindex="loading ? '-1' : void 0"
     @click="onClick"
     :class="[
-      'relative h-10 rounded-md border-none px-4 tracking-wider transition-colors duration-300',
+      'relative h-10 rounded-md border-none px-4 tracking-wider transition-colors duration-300 n-disabled',
       'before:absolute before:inset-0 before:rounded-inherit before:border before:border-solid before:bg-opacity-0 before:transition-colors before:duration-300',
-      'cursor-pointer disabled:cursor-not-allowed disabled:text-on-bsc disabled:opacity-48 disabled:before:hidden',
+      'disabled:text-on-bsc',
       danger ? 'n-outline-danger' : 'n-outline',
       loading
         ? 'cursor-wait'
