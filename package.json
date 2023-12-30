@@ -3,6 +3,9 @@
   "version": "0.1.0",
   "type": "module",
   "description": "Vue3 Components",
+  "files": [
+    "lib/dist"
+  ],
   "keywords": [
     "Vue3",
     "Components"
