@@ -1,4 +1,7 @@
 {
   "name": "@nameless-ui/doc",
-  "private": true
+  "private": true,
+  "dependencies": {
+    "nameless-ui": "workspace:^"
+  }
 }

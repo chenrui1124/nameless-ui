@@ -56,7 +56,6 @@
     "arrowParens": "avoid"
   },
   "dependencies": {
-    "nameless-ui": "workspace:^",
     "vue": "^3.3.13",
     "vue-router": "^4.2.5"
   },
