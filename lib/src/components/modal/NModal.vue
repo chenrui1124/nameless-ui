@@ -28,8 +28,8 @@ defineSlots<{
     <Transition enter-from-class="opacity-0" leave-to-class="opacity-0">
       <div
         v-show="visible"
-        class="pointer-events-none fixed inset-0 z-30 flex items-center justify-center transition duration-700 ease-out"
-        style="perspective: 50rem"
+        class="pointer-events-none fixed inset-0 z-30 flex items-center justify-center transition duration-700"
+        style="perspective: 32rem"
       >
         <Transition
           :enter-from-class="$style['modal-enter-from']"
@@ -39,10 +39,13 @@ defineSlots<{
         >
           <div
             v-if="visible"
-            class="pointer-events-auto mx-4 flex w-[28rem] max-w-full flex-col gap-4 rounded-2xl border border-solid border-acc bg-bsc p-6 transition duration-700 ease-fast max-sm:mb-24"
+            class="pointer-events-auto mx-4 flex w-[28rem] max-w-full flex-col gap-4 rounded-2xl border border-solid bg-bsc p-6 transition duration-700 ease-fast max-sm:mb-24"
+            :class="danger ? 'border-on-err' : 'border-acc'"
           >
             <!--* Title *-->
-            <div v-if="title" class="text-2xl text-acc">{{ title }}</div>
+            <div v-if="title" class="text-2xl" :class="danger ? 'text-on-err' : 'text-acc'">
+              {{ title }}
+            </div>
             <div v-if="subtitle" class="-mt-2 pl-px text-sm text-otl">{{ subtitle }}</div>
 
             <!--* Content *-->
@@ -62,10 +65,7 @@ defineSlots<{
 </template>
 
 <style module>
-.modal-enter-from {
-  transform: translateY(-50%) rotateX(80deg);
-}
-
+.modal-enter-from,
 .modal-leave-to {
   transform: translateY(-50%) rotateX(80deg);
 }
