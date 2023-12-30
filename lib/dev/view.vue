@@ -1,7 +1,17 @@
 <script setup lang="ts">
+import { NSwitch } from '@lib'
+import { ref } from 'vue'
 import { useRouter } from 'vue-router'
 
 const router = useRouter()
+
+const isDark = ref()
+
+function onSwitch(v: boolean) {
+  v
+    ? document.documentElement.classList.add('dark')
+    : document.documentElement.classList.remove('dark')
+}
 </script>
 
 <template>
@@ -13,6 +23,10 @@ const router = useRouter()
         <RouterLink v-for="i in router.options.routes" :to="i.path" class="text-acc">
           {{ i.name }}
         </RouterLink>
+      </div>
+
+      <div class="fixed right-1 top-1">
+        <NSwitch v-model="isDark" @switch="onSwitch" />
       </div>
     </Teleport>
   </div>
