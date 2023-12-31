@@ -5,6 +5,8 @@ export type SwitchProps = {
   disabled?: boolean
 }
 
-export type SwitchModel = boolean | undefined
+export type SwitchModel = {
+  modelValue: boolean | undefined
+}
 
 export const NSwitch = withInstall(Switch)

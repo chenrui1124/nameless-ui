@@ -5,7 +5,7 @@ defineOptions({ name: 'Switch' })
 
 defineProps<SwitchProps>()
 
-const modelValue = defineModel<SwitchModel>({ required: true })
+const modelValue = defineModel<SwitchModel['modelValue']>({ required: true })
 
 const emit = defineEmits<{ switch: [newValue: boolean] }>()
 
