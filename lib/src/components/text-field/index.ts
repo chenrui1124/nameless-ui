@@ -1,11 +1,12 @@
 import type { PureCSSIconClass } from 'mm3'
+import type { InputHTMLAttributes } from 'vue'
 
 import { withInstall } from '@utils'
 import TextField from './NTextField.vue'
 
 export type TextFieldProps = {
-  autocomplete?: HTMLInputElement['autocomplete']
-  pattern?: HTMLInputElement['pattern']
+  autocomplete?: InputHTMLAttributes['autocomplete']
+  pattern?: InputHTMLAttributes['pattern']
   placeholder?: string
   disabled?: boolean
   icon?: PureCSSIconClass
