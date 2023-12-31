@@ -9,7 +9,7 @@ import tw from 'tailwindcss'
 export default defineConfig({
   plugins: [
     vue({
-      script: { defineModel: true, propsDestructure: true }
+      script: { propsDestructure: true }
     }),
     jsx({
       optimize: true
