@@ -3,6 +3,8 @@ import type { RadiosProps } from '.'
 
 import { BsIcon } from '@bases'
 
+defineOptions({ name: 'Radios' })
+
 defineProps<RadiosProps>()
 
 const modelValue = defineModel<string>({ required: true })

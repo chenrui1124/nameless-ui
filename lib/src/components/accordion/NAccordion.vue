@@ -20,7 +20,7 @@ defineSlots<{ default(props: void): any }>()
 
 <template>
   <div
-    class="rounded-xl border border-solid bg-bsc transition duration-300"
+    class="rounded-lg border border-solid bg-bsc transition duration-300"
     :class="danger ? 'border-on-err' : 'border-acc'"
   >
     <div
