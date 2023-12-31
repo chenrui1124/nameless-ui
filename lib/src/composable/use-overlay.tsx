@@ -10,7 +10,7 @@ function useOverlayFactory() {
       <Transition enterFromClass='opacity-0' leaveToClass='opacity-0'>
         <div
           v-show={$visible.value}
-          class='fixed inset-0 z-20 bg-on-bsc/32 dark:bg-on-bsc/16 backdrop-blur-sm transition duration-500'
+          class='fixed inset-0 z-30 bg-on-bsc/32 dark:bg-on-bsc/16 backdrop-blur-sm transition duration-500'
           {...$events.value}></div>
       </Transition>
     )

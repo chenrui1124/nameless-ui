@@ -10,7 +10,7 @@ defineProps<ModalProps>()
 const { show, hide } = useOverlay()
 
 const { visible, open, close, closeWith } = useVisible({
-  beforeOpen: () => show(close),
+  beforeOpen: show,
   beforeClose: hide
 })
 

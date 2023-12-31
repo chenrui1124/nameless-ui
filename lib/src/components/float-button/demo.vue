@@ -7,7 +7,7 @@ import { NFloatButton } from '.'
 <template>
   <NModal title="Lorem">
     <template #trigger="{ open }">
-      <NFloatButton disabled icon="i-[solar--wheel-angle-bold-duotone]" @click="open" />
+      <NFloatButton icon="i-[solar--alt-arrow-right-line-duotone]" @click="open" />
     </template>
 
     {{ lorem('sc') }}
