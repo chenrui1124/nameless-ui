@@ -13,5 +13,6 @@ const valid = ref()
     <NTextField v-model="value" clearable />
     <NTextField v-model="value" icon="i-[ri--search-2-fill]" clearable />
     <NTextField v-model="value" v-model:valid="valid" :validator="v => v == '1'" />
+    <NTextField v-model="value" v-model:valid="valid" :validator="v => v == '1'" disabled />
   </div>
 </template>

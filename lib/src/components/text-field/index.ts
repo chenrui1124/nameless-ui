@@ -4,8 +4,10 @@ import { withInstall } from '@utils'
 import TextField from './NTextField.vue'
 
 export type TextFieldProps = {
+  autocomplete?: HTMLInputElement['autocomplete']
   pattern?: HTMLInputElement['pattern']
   placeholder?: string
+  disabled?: boolean
   icon?: PureCSSIconClass
   secret?: boolean
   clearable?: boolean

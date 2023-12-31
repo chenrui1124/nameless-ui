@@ -27,12 +27,10 @@ const isValid = validator
 <template>
   <div class="relative inline-flex h-10 rounded-md">
     <input
-      :="$attrs"
+      :="{ ...$attrs, autocomplete, pattern, placeholder, disabled }"
       :type="secret ? 'password' : 'text'"
-      :pattern
-      :placeholder
       v-model="modelValue"
-      class="peer/n-text-field flex-1 rounded-inherit border border-solid border-transparent text-sm text-on-bsc transition-all duration-300 placeholder:text-on-bsc invalid:bg-err invalid:text-on-err invalid:n-outline-danger focus:bg-bsc invalid:focus:border-on-err"
+      class="peer/n-text-field flex-1 rounded-inherit border border-solid border-transparent text-sm text-on-bsc transition-all duration-300 n-disabled placeholder:text-on-bsc invalid:bg-err invalid:text-on-err invalid:n-outline-danger focus:bg-bsc invalid:focus:border-on-err disabled:bg-dis"
       :class="[
         clearable ? 'pr-10' : 'pr-3',
         icon ? 'pl-10' : 'pl-3',
@@ -51,7 +49,7 @@ const isValid = validator
 
     <Transition enter-from-class="scale-0" leave-to-class="scale-0">
       <button
-        v-if="clearable"
+        v-if="clearable && !disabled"
         v-show="modelValue"
         @click="clear"
         class="absolute inset-y-0 right-0 inline-flex size-10 items-center justify-center rounded-inherit border-none bg-transparent text-otl transition duration-300 n-outline hover:text-on-err focus:text-on-err"
