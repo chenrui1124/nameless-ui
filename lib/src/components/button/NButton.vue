@@ -5,12 +5,12 @@ import { BsIcon } from '@bases'
 
 defineOptions({ name: 'Button' })
 
-const { variant = 'outlined', loading, disabled } = defineProps<ButtonProps>()
+const { loading, variant = 'outlined' } = defineProps<ButtonProps>()
 
 const emit = defineEmits<{ click: [event: Event] }>()
 
-function onClick(event: Event) {
-  if (!loading && !disabled) emit('click', event)
+function onClick(e: Event) {
+  if (!loading) emit('click', e)
 }
 
 defineSlots<{ default(props: void): string }>()
@@ -18,19 +18,26 @@ defineSlots<{ default(props: void): string }>()
 
 <template>
   <button
-    type="button"
-    :="$attrs"
-    :disabled="disabled"
-    :tabindex="loading ? '-1' : void 0"
+    :disabled
     @click="onClick"
+    :tabindex="loading ? '-1' : void 0"
     :class="[
-      'relative h-10 rounded-md border-none px-4 tracking-wider transition-colors duration-300 n-disabled',
-      'before:absolute before:inset-0 before:rounded-inherit before:border before:border-solid before:bg-opacity-0 before:transition-colors before:duration-300',
-      'disabled:text-on-bsc',
-      danger ? 'n-outline-danger' : 'n-outline',
-      loading
-        ? 'cursor-wait'
-        : 'cursor-pointer hover:before:bg-opacity-8 focus:before:bg-opacity-12',
+      'relative h-10 px-4 tracking-wider',
+      'transition-all duration-300',
+      'rounded-md border-none',
+      'n-disabled disabled:text-on-bsc',
+
+      'before:absolute before:inset-0',
+      'before:rounded-inherit before:border before:border-solid',
+      'before:bg-opacity-0',
+      'before:transition-colors before:duration-300',
+
+      !danger ? 'n-outline' : 'n-outline-danger',
+
+      !loading
+        ? 'cursor-pointer hover:before:bg-opacity-8 focus:before:bg-opacity-12'
+        : 'cursor-wait',
+
       {
         [`before:bg-on-bsc ${danger ? 'bg-err text-on-err' : 'bg-nrm text-on-nrm'}`]:
           variant === 'solid',
@@ -51,17 +58,30 @@ defineSlots<{ default(props: void): string }>()
       }
     ]"
   >
-    <BsIcon v-if="icon" :i="icon" :class="{ 'opacity-0': loading && !disabled }" />
+    <!-- Icon -->
+    <BsIcon v-if="icon" :i="icon" :class="!disabled && loading && 'invisible'" />
+
+    <!-- Text -->
     <span
       class="pointer-events-none text-sm"
-      :class="{ 'ml-1': !icon, 'mr-1': !appendIcon, 'opacity-0': loading && !disabled }"
+      :class="[
+        loading && !disabled && 'invisible',
+        {
+          'ml-1': !icon,
+          'mr-1': !appendIcon
+        }
+      ]"
     >
       <slot>{{ text }}</slot>
     </span>
+
+    <!-- Append Icon -->
     <BsIcon v-if="appendIcon" :i="appendIcon" :class="{ 'opacity-0': loading && !disabled }" />
+
+    <!-- Loading -->
     <Transition enter-from-class="opacity-0" leave-to-class="opacity-0">
       <span
-        v-if="loading && !disabled"
+        v-if="!disabled && loading"
         class="absolute inset-0 inline-flex items-center justify-center transition duration-300"
       >
         <BsIcon i="i-[svg-spinners--ring-resize]" />

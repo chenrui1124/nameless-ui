@@ -9,6 +9,7 @@ export type FloatButtonProps = {
    * position: absolute
    */
   absolute?: boolean
+  disabled?: boolean
 }
 
 export const NFloatButton = withInstall(FloatButton)

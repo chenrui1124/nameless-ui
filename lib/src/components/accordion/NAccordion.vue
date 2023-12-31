@@ -12,7 +12,7 @@ const { mode = 'grid', init } = defineProps<AccordionProps>()
 const model = ref<boolean | undefined>(init)
 
 function toggle() {
-  model.value = !model.value
+  requestAnimationFrame(() => (model.value = !model.value))
 }
 
 defineSlots<{ default(props: void): any }>()
@@ -20,19 +20,19 @@ defineSlots<{ default(props: void): any }>()
 
 <template>
   <div
-    class="rounded-2xl border border-solid bg-bsc transition duration-300"
+    class="rounded-xl border border-solid bg-bsc transition duration-300"
     :class="danger ? 'border-on-err' : 'border-acc'"
   >
     <div
       @click="toggle"
-      class="flex h-14 cursor-pointer select-none items-center gap-4 rounded-inherit px-6 transition-colors duration-300"
+      class="flex h-12 cursor-pointer select-none items-center gap-4 rounded-inherit px-6 transition-colors duration-300"
       :class="{
         [danger ? 'bg-on-err/12' : 'bg-acc/12']: model,
         'text-acc hover:bg-acc/8': !danger,
         'text-on-err hover:bg-on-err/8': danger
       }"
     >
-      <div class="pointer-events-none flex-1 pb-1 text-base tracking-wider">
+      <div class="pointer-events-none flex-1 pb-px text-base tracking-wider">
         {{ title }}
       </div>
       <BsIcon

@@ -22,11 +22,15 @@ import { NModal } from '.'
       </template>
     </NModal>
 
-    <NModal title="Delete" subtitle="Confirm Delete" danger>
+    <NModal title="Delete" subtitle="Confirm Delete" danger width="50rem">
       <template #trigger="{ open }">
         <NButton @click="open">DELETE</NButton>
       </template>
 
+      {{ lorem('sc') }}
+      {{ lorem('sc') }}
+      {{ lorem('sc') }}
+      {{ lorem('sc') }}
       {{ lorem('sc') }}
 
       <template #actions="{ close, closeWith }">

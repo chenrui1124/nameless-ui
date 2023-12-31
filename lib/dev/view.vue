@@ -1,17 +1,18 @@
 <script setup lang="ts">
-import { NSwitch } from '@lib'
-import { ref } from 'vue'
 import { useRouter } from 'vue-router'
+import { usePreferredDark } from '@vueuse/core'
+import { NSwitch } from '@lib'
+import { watchEffect } from 'vue'
 
 const router = useRouter()
 
-const isDark = ref()
+const isDark = usePreferredDark()
 
-function onSwitch(v: boolean) {
-  v
+watchEffect(() =>
+  isDark.value
     ? document.documentElement.classList.add('dark')
     : document.documentElement.classList.remove('dark')
-}
+)
 </script>
 
 <template>
@@ -26,7 +27,7 @@ function onSwitch(v: boolean) {
       </div>
 
       <div class="fixed right-1 top-1">
-        <NSwitch v-model="isDark" @switch="onSwitch" />
+        <NSwitch v-model="isDark" />
       </div>
     </Teleport>
   </div>
