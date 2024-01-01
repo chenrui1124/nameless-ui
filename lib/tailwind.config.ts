@@ -1,7 +1,7 @@
 import type { Config } from 'tailwindcss'
 
 import { addDynamicIconSelectors } from '@iconify/tailwind'
-import { base, theme, utilities } from './tw'
+import { base, theme, utilities, variants } from './tw'
 import plugin from 'tailwindcss/plugin'
 
 export default {
@@ -9,9 +9,10 @@ export default {
   darkMode: 'class',
   theme,
   plugins: [
-    plugin(({ addBase, addUtilities, theme }) => {
+    plugin(({ addBase, addUtilities, addVariant, theme }) => {
       addBase(base)
       addUtilities(utilities(theme))
+      for (const arg of variants) addVariant(...arg)
     }),
     addDynamicIconSelectors({ prefix: 'i' })
   ],

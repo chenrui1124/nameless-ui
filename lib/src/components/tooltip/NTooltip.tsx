@@ -18,7 +18,7 @@ function TooltipContent({ position, text, withFocus }: TooltipProps) {
       {text && (
         <div
           class={[
-            'pointer-events-none absolute z-10 rounded bg-on-bsc px-3 py-1 text-bsc  drop-shadow-md transition duration-300',
+            'pointer-events-none absolute z-10 rounded bg-on-bsc px-3 py-1 text-bsc drop-shadow-md transition duration-300',
             'scale-90 opacity-0 group-hover/n-tooltip:scale-100 group-hover/n-tooltip:opacity-100',
             'before:absolute before:size-2 before:rotate-45 before:bg-on-bsc',
             {

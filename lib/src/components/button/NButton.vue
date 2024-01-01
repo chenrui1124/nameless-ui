@@ -59,7 +59,7 @@ defineSlots<{ default(props: void): string }>()
     ]"
   >
     <!-- Icon -->
-    <BsIcon v-if="icon" :i="icon" :class="!disabled && loading && 'invisible'" />
+    <BsIcon v-if="icon" :i="icon" :class="loading && !disabled && 'invisible'" />
 
     <!-- Text -->
     <span
@@ -76,7 +76,7 @@ defineSlots<{ default(props: void): string }>()
     </span>
 
     <!-- Append Icon -->
-    <BsIcon v-if="appendIcon" :i="appendIcon" :class="{ 'opacity-0': loading && !disabled }" />
+    <BsIcon v-if="appendIcon" :i="appendIcon" :class="{ invisible: loading && !disabled }" />
 
     <!-- Loading -->
     <Transition enter-from-class="opacity-0" leave-to-class="opacity-0">

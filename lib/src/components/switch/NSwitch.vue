@@ -25,9 +25,11 @@ function onSwitch() {
       'group/n-switch',
       'relative h-7 w-12 cursor-pointer rounded-full border-none transition-all duration-300 n-outline n-disabled',
 
-      'before:absolute before:inset-0 before:rounded-inherit before:border before:border-solid before:transition before:duration-300',
+      'before&after:absolute before&after:transition before&after:duration-300',
 
-      'after:pointer-events-none after:absolute after:-right-1 after:top-1/2 after:inline-block after:size-9 after:-translate-y-1/2 after:rounded-full after:bg-on-bsc after:bg-opacity-0 after:transition after:duration-300 after:ease-fast hover:after:bg-opacity-8 focus:after:bg-opacity-12',
+      'before:absolute before:inset-0 before:rounded-inherit before:border before:border-solid',
+
+      'after:pointer-events-none after:-right-1 after:top-1/2 after:inline-block after:size-9 after:-translate-y-1/2 after:rounded-full after:bg-on-bsc after:bg-opacity-0 after:ease-fast hover:after:bg-opacity-8 focus:after:bg-opacity-12',
 
       {
         'bg-acc before:border-transparent after:translate-x-0 disabled:bg-dis': modelValue,
@@ -41,6 +43,6 @@ function onSwitch() {
         'translate-x-0 bg-bsc': modelValue,
         '-translate-x-5 scale-75 bg-otl group-disabled/n-switch:bg-dis': !modelValue
       }"
-    ></span>
+    />
   </button>
 </template>

@@ -15,12 +15,12 @@ export const AccordionBodyByGrid = defineComponent(
   (props: AccordionBodyProps, { slots }) => {
     return () => (
       <div
+        style={{ gridTemplateRows: props.model ? '1fr' : '0fr' }}
         class={[
           'grid px-6 transition-all duration-500 ease-fast',
           props.model ? 'pb-6 pt-4' : 'pb-0 pt-0'
-        ]}
-        style={{ gridTemplateRows: props.model ? '1fr' : '0fr' }}>
-        <div class='overflow-hidden text-sm text-on-bsc'>{slots.default?.()}</div>
+        ]}>
+        <div class='overflow-y-hidden text-sm text-on-bsc'>{slots.default?.()}</div>
       </div>
     )
   },
@@ -36,7 +36,7 @@ export const AccordionBodyByHeight = defineComponent(
     return () => (
       <div
         style={{ height: height.value }}
-        class='relative overflow-hidden transition-all duration-500 ease-fast'>
+        class='relative overflow-y-hidden transition-all duration-500 ease-fast'>
         <div
           ref={el}
           class='absolute inset-x-0 bottom-0 rounded-b-2xl px-6 pb-6 pt-4 text-sm text-on-bsc transition-colors duration-300'>
@@ -45,5 +45,5 @@ export const AccordionBodyByHeight = defineComponent(
       </div>
     )
   },
-  { ...ctx, name: 'AccordionBodyByGrid' }
+  { ...ctx, name: 'AccordionBodyByHeight' }
 )

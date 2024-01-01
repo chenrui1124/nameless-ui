@@ -4,8 +4,11 @@ import Modal from './NModal.vue'
 export type ModalProps = {
   title?: string
   subtitle?: string
-  width?: string
   danger?: boolean
+  /**
+   * @default '28rem'
+   */
+  width?: string
 }
 
 export const NModal = withInstall(Modal)

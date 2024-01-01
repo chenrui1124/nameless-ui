@@ -5,7 +5,7 @@ import { useOverlay, useVisible } from '@composable'
 
 defineOptions({ name: 'Modal' })
 
-defineProps<ModalProps>()
+const { width = '28rem' } = defineProps<ModalProps>()
 
 const { show, hide } = useOverlay()
 
@@ -26,15 +26,15 @@ defineSlots<{
 
   <Teleport to="body">
     <Transition
-      :enter-from-class="$style['modal-enter-from']"
-      :leave-to-class="$style['modal-leave-to']"
-      :enter-active-class="$style['modal-enter-active']"
-      :leave-active-class="$style['modal-enter-active']"
+      :enter-from-class="$style['from-and-to']"
+      :leave-to-class="$style['from-and-to']"
+      :enter-active-class="$style.active"
+      :leave-active-class="$style.active"
     >
       <div
         v-if="visible"
-        :style="{ width }"
-        class="pointer-events-auto fixed left-1/2 top-1/2 z-30 flex max-h-[88dvh] w-[28rem] max-w-[80dvw] -translate-x-1/2 -translate-y-1/2 flex-col gap-4 rounded-xl border border-solid bg-bsc p-6 transition duration-700 ease-fast"
+        :style="{ width, maxHeight: '88dvh', maxWidth: '80dvw' }"
+        class="pointer-events-auto fixed left-1/2 top-1/2 z-30 flex -translate-x-1/2 -translate-y-1/2 flex-col gap-4 rounded-xl border border-solid bg-bsc p-6 transition duration-700 ease-fast"
         :class="danger ? 'border-on-err' : 'border-acc'"
       >
         <!--* Title *-->
@@ -58,14 +58,12 @@ defineSlots<{
 </template>
 
 <style module>
-.modal-enter-from,
-.modal-leave-to {
+.from-and-to {
   opacity: 0;
   transform: translate(-50%, -100%) rotateX(45deg) scale3d(0.5, 0.5, 0.5);
 }
 
-.modal-enter-active,
-.modal-leave-active {
+.active {
   transform-style: preserve-3d;
 }
 </style>
