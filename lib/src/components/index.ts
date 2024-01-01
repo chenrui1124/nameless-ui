@@ -1,4 +1,5 @@
 export { NAccordion, type AccordionProps } from './accordion'
+export { NApp, type AppProps } from './app'
 export { NAutoGrid, type AutoGridProps } from './auto-grid'
 export { NButton, type ButtonProps } from './button'
 export { NFloatButton, type FloatButtonProps } from './float-button'
