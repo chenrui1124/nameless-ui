@@ -15,7 +15,7 @@ const modelValue = defineModel<string>({ required: true })
     <label
       v-for="i in each"
       :key="typeof i == 'string' ? i : i.value"
-      class="relative box-border inline-flex h-12 min-w-12 select-none items-center justify-center gap-4 rounded-lg border border-solid px-4 outline outline-0 outline-transparent transition-all duration-300 hover:bg-acc/8 has-[:focus-visible]:outline-4 has-[:focus-visible]:outline-acc/48"
+      class="relative box-border inline-flex h-12 min-w-12 select-none items-center justify-center gap-4 rounded-lg border border-solid px-4 outline outline-0 outline-transparent transition-all duration-300 hover:bg-acc/8 has-[:focus-visible]:outline-2 has-[:focus-visible]:outline-offset-2 has-[:focus-visible]:outline-acc/48"
       :class="[
         (typeof i == 'string' ? i : i.value) == modelValue
           ? 'pointer-events-none border-acc bg-acc/12 text-acc'

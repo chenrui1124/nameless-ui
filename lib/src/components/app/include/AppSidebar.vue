@@ -32,7 +32,7 @@ defineSlots<{ default(props: void): any }>()
     />
 
     <div
-      class="relative h-full w-0 transition-all duration-500 ease-fast peer-hover/n-app-sidebar-folding:brightness-90 peer-focus/n-app-sidebar-folding:brightness-90 md:overflow-hidden"
+      class="relative h-full w-0 transition-all duration-500 ease-fast peer-hover/n-app-sidebar-folding:brightness-90 peer-focus-visible/n-app-sidebar-folding:brightness-90 md:overflow-hidden"
       :class="{ 'md:w-64': visible || typeof visible == 'undefined' }"
     >
       <Transition enter-from-class="opacity-0" leave-to-class="opacity-0">

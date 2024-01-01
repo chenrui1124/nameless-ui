@@ -12,6 +12,10 @@ export type TextFieldProps = {
   icon?: PureCSSIconClass
   secret?: boolean
   clearable?: boolean
+  /**
+   * @default 'outlined'
+   */
+  variant?: 'solid' | 'outlined'
   validator?: (modelValue: string | undefined) => boolean
 }
 

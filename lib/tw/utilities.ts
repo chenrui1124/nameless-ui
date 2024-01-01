@@ -7,13 +7,15 @@ export const utilities = (theme: (path: string) => string) =>
     '.n-outline': {
       outline: '0 solid transparent',
       '&:focus-visible': {
-        outline: `4px solid rgba(var(${toVariable('acc')}), ${theme('opacity.48')})`
+        outline: `2px solid rgba(var(${toVariable('acc')}), ${theme('opacity.48')})`,
+        outlineOffset: '2px'
       }
     },
     '.n-outline-danger': {
       outline: '0 solid transparent',
       '&:focus-visible': {
-        outline: `4px solid rgba(var(${toVariable('on-err')}), ${theme('opacity.48')})`
+        outline: `2px solid rgba(var(${toVariable('on-err')}), ${theme('opacity.48')})`,
+        outlineOffset: '2px'
       }
     },
     '.n-disabled': {
@@ -21,5 +23,5 @@ export const utilities = (theme: (path: string) => string) =>
         opacity: theme('opacity.48'),
         pointerEvents: 'none'
       }
-    },
+    }
   }) satisfies CSSInJS
